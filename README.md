@@ -45,7 +45,22 @@ Create a new job
 
 ### Git integration
 
-// Review videos one more time 
+1. Install Git plugin
+2. Let Jenkins know where Git is installed (%GIT_HOME%\cmd\git.exe)
+
+In the job configuration look for Source Management and select Git. You must specify the address of the repository. *Validate if the main branch of the repository is MAIN or MASTER*
+After that go to  Global Tool Configuration and check if the display path for Git in Jenkins is the same that the computer. Add name you may the version of Git.
+
+### Maven integration
+
+Go to Global Tool Configuration and look for Maven, select Add Maven fill the fields just as Git. In name type the version of Maven and path type the location of maven in your conputer.
+You may go to configuration of a job a look for Build, select *Invoke top-level Maven targets* option.In Goals field, type the reason of the build. Select advance and in POM field type the path of the POM file from the project. 
+
+### Artifacts
+
+When you create  a job in Build type the command  ECHO hello > file_name.txt. Once you run the build a file with be create with the information typed. Go to Add post-build Actions and select Archive the Artifacts, the run the build one more time. If the job is successfully a permanent link will be created. 
+
+You may copy the created files in another job. In the build configuration select *Copy artifacts from another project* option and type the name of the project along the file name to be copied. 
 
 ### Nodes 
 
