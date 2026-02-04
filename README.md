@@ -62,6 +62,29 @@ When you create  a job in Build type the command  ECHO hello > file_name.txt. On
 
 You may copy the created files in another job. In the build configuration select *Copy artifacts from another project* option and type the name of the project along the file name to be copied. 
 
+### Build Pipeline View
+
+In the main page select the + button and select Build Pipeline View option. You may personalized which job will be the default job to be displayed. If the job is done, the color will chage from blue to green. Also you may select the quantity of Pipelines to be displayed. 
+
+### Parameterized jobs
+
+1. Create a new job
+2. In the configuration select "This project is parameterized" and select the parameter.
+3. Type the environment you want to use. DEV, QA, PRE-PRO, PRODUCTION...
+4. Save and build with a paramenter
+
+You may select with environment use to run the job and even, select the default parameter. To apply the aparameter in the description type %environment% and tue console output will change this to the parameter used it. A full list of the available parameters is available in the build configuration. 
+
+### Jenkins security
+
+In case you lock your account follow the next steps:
+1. Go to <strong>$JENKINS_HOME</strong> in the file system and find <strong>config.xml</strong> file
+2. Look for the <useSecurity>true</useSecurity> element in this file. Replace true with *false*
+3. Remove the elements autorizationStrategy and securityReals
+4. Restart Jenkins
+
+To protect you Jenkins account go to Configure Global Security and select Jenkins own user database then Allow users to sign up (this checkbox is optional).
+
 ### Nodes 
 
 Nodes may be as a tool when you have several jobs to be run. Sometimes have just one node won't be enough. 
